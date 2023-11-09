@@ -51,10 +51,16 @@ body {
 .jeu {
   height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 #affichageNom {
+  font-size: 1.5em;
+  font-weight: 900;
+  margin: 30px;
+}
+.compteurErreur {
   font-size: 1.5em;
   font-weight: 900;
   margin: 30px;

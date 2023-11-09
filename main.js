@@ -10,3 +10,9 @@ function afficherNom() {
   var affichageNom = document.getElementById("affichageNom");
   affichageNom.textContent = "Bonjour, " + nom + " !";
 }
+
+var erreur = 0;
+
+var nombreErreur = document.getElementById("nombreErreur");
+nombreErreur.textContent = erreur;
+erreur++;
