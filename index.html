@@ -14,20 +14,29 @@
     />
   </head>
   <body>
-    <div class="pageAcceuil">
+    <section class="pageAcceuil">
       <img src="images/image_pendu.png" alt="image d'illustration du pendu" />
       <h1>
         <span>H</span> <span>a</span> <span>n</span> <span>g</span>
         <span>m</span> <span>a</span> <span>n</span>
       </h1>
+      <form action="#">
+        <input type="text" name="nom" id="nom" placeholder="Entrez votre nom" />
+      </form>
       <h4>Essayes de trouver le mot caché !</h4>
-      <button class="boutonDemarrage">
+      <button
+        class="boutonDemarrage"
+        onclick="scrollToBottom(); afficherNom();"
+      >
         <i
           class="fa-regular fa-circle-play fa-beat fa-xlg"
           style="color: #000000"
         ></i>
       </button>
-    </div>
+    </section>
+    <section class="jeu">
+      <div id="affichageNom"></div>
+    </section>
 
     <script src="main.js"></script>
   </body>
