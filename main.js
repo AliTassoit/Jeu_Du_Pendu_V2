@@ -6,13 +6,15 @@ function scrollToBottom() {
 }
 
 function afficherNom() {
-  var nom = document.getElementById("nom").value;
-  var affichageNom = document.getElementById("affichageNom");
+  const nom = document.getElementById("nom").value;
+  const affichageNom = document.getElementById("affichageNom");
   affichageNom.textContent = "Bonjour, " + nom + " !";
 }
 
-var erreur = 0;
+let erreur = 0;
 
-var nombreErreur = document.getElementById("nombreErreur");
-nombreErreur.textContent = erreur;
-erreur++;
+function afficherErreur() {
+  document.getElementById("compteurErreur").style.visibility = "visible";
+  const nombreErreur = document.getElementById("nombreErreur");
+  nombreErreur.textContent = erreur;
+}

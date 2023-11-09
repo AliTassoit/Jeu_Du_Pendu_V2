@@ -60,8 +60,9 @@ body {
   font-weight: 900;
   margin: 30px;
 }
-.compteurErreur {
+#compteurErreur {
   font-size: 1.5em;
   font-weight: 900;
   margin: 30px;
+  visibility: hidden;
 }
