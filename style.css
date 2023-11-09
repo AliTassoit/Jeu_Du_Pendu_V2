@@ -14,6 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  margin-bottom: 150px;
 }
 .pageAcceuil img {
   margin-top: 50px;
@@ -65,4 +66,9 @@ body {
   font-weight: 900;
   margin: 30px;
   visibility: hidden;
+}
+
+.titreJeu {
+  font-style: italic;
+  font-size: 2em;
 }
