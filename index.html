@@ -32,7 +32,7 @@
       <h4>Essayes de trouver le mot caché !</h4>
       <button
         class="boutonDemarrage"
-        onclick="scrollToBottom(); afficherNom(); afficherErreur();"
+        onclick="scrollToBottom(); afficherPageJeu();"
       >
         <i
           class="fa-regular fa-circle-play fa-beat fa-xlg"
@@ -40,8 +40,9 @@
         ></i>
       </button>
     </section>
-    <section class="jeu">
+    <section id="jeu">
       <div id="affichageNom"></div>
+      <h1 class="titreJeu">LE JEU DU PENDU</h1>
       <div id="compteurErreur">
         Nombre d'erreurs : <span id="nombreErreur"></span>
       </div>

@@ -18,3 +18,9 @@ function afficherErreur() {
   const nombreErreur = document.getElementById("nombreErreur");
   nombreErreur.textContent = erreur;
 }
+
+function afficherPageJeu() {
+  afficherNom();
+  afficherErreur();
+  document.getElementById("jeu").style.visibility = "visible";
+}
