@@ -44,3 +44,7 @@ function afficherPageJeu() {
   afficherErreur();
   document.getElementById("header").style.visibility = "visible";
 }
+
+recupererMotsUniquement((motsUniquement) => {
+  console.log(motsUniquement);
+});

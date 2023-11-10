@@ -41,7 +41,7 @@ body {
   opacity: 0.85;
 }
 
-#jeu {
+#header {
   height: 100vh;
   display: flex;
   flex-direction: row;
