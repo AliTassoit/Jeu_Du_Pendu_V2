@@ -1,3 +1,23 @@
+function recupererMotsUniquement(callback) {
+  let apiUrl = "https://trouve-mot.fr/api/random/50";
+
+  $.ajax({
+    url: apiUrl,
+    method: "GET",
+    dataType: "json",
+    success: function (words) {
+      let motsUniquement = $.map(words, (mot) => {
+        return mot.name;
+      });
+
+      callback(motsUniquement);
+    },
+    error: () => {
+      alert("Merci de réessayer plus tard");
+    },
+  });
+}
+
 function scrollToBottom() {
   window.scrollTo({
     top: document.body.scrollHeight,
@@ -22,5 +42,5 @@ function afficherErreur() {
 function afficherPageJeu() {
   afficherNom();
   afficherErreur();
-  document.getElementById("jeu").style.visibility = "visible";
+  document.getElementById("header").style.visibility = "visible";
 }
