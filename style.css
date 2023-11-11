@@ -41,8 +41,14 @@ body {
   opacity: 0.85;
 }
 
-#header {
+#jeu {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -73,4 +79,71 @@ body {
   font-style: italic;
   font-size: 2em;
   font-weight: 900;
+}
+
+#motSecret {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 5em;
+}
+
+#pendu {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  visibility: hidden;
+}
+
+#devineReponse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+}
+
+#motDevine {
+  font-size: 1.7em;
+  border-radius: 5px;
+  margin: 30px;
+  font-family: "Shadows Into Light", cursive;
+  border: solid 1px black;
+}
+
+#verifier {
+  font-size: 1.7em;
+  font-family: "Shadows Into Light", cursive;
+  border-radius: 5px;
+  border: solid 1px black;
+  height: 45%;
+}
+
+.clavier {
+  display: flex;
+  justify-content: center;
+}
+
+#clavier {
+  display: flex;
+  flex-direction: column;
+}
+
+.ligne {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#ligne3 {
+  justify-content: center;
+}
+
+.touche {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  cursor: pointer;
 }

@@ -1,5 +1,5 @@
 function recupererMotsUniquement(callback) {
-  let apiUrl = "https://trouve-mot.fr/api/random/50";
+  let apiUrl = "https://trouve-mot.fr/api/random/10";
 
   $.ajax({
     url: apiUrl,
@@ -39,12 +39,21 @@ function afficherErreur() {
   nombreErreur.textContent = erreur;
 }
 
+let afficherDevineRep = () => {
+  document.getElementById("devineReponse").style.visibility = "visible";
+};
+
+let afficherMot = () => {
+  recupererMotsUniquement((motsUniquement) => {
+    const randomIndex = Math.floor(Math.random() * motsUniquement.length);
+    document.getElementById("mot").textContent = motsUniquement[randomIndex];
+  });
+};
+
 function afficherPageJeu() {
   afficherNom();
   afficherErreur();
   document.getElementById("header").style.visibility = "visible";
+  afficherMot();
+  afficherDevineRep();
 }
-
-recupererMotsUniquement((motsUniquement) => {
-  console.log(motsUniquement);
-});
