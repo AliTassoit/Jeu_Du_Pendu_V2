@@ -18,6 +18,10 @@ function recupererMotsUniquement(callback) {
   });
 }
 
+function enleverAccents(chaine) {
+  return chaine.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+}
+
 function scrollToBottom() {
   window.scrollTo({
     top: document.body.scrollHeight,
@@ -46,7 +50,34 @@ let afficherDevineRep = () => {
 let afficherMot = () => {
   recupererMotsUniquement((motsUniquement) => {
     const randomIndex = Math.floor(Math.random() * motsUniquement.length);
+    let motsSansAccent = motsUniquement.map(function (mot) {
+      return enleverAccents(mot);
+    });
     document.getElementById("mot").textContent = motsUniquement[randomIndex];
+    let motMystere = motsSansAccent[randomIndex];
+    motMystere = motMystere.toUpperCase();
+
+    console.log(motMystere);
+    let motAffiche = Array(motMystere.length).fill("_");
+    document.getElementById("mot").textContent = motAffiche.join(" ");
+    document.addEventListener("keydown", (event) => {
+      let touchePresse = event.key.toUpperCase();
+      let toucheCorrespondante = document.getElementById(touchePresse);
+      let lettrePresente = motMystere.includes(touchePresse);
+      if (lettrePresente) {
+        for (let i = 0; i < motMystere.length; i++) {
+          if (motMystere[i] === touchePresse) {
+            motAffiche[i] = touchePresse;
+          }
+        }
+        toucheCorrespondante.classList.add("correct");
+      } else {
+        erreur++;
+        afficherErreur();
+        toucheCorrespondante.classList.add("faux");
+      }
+      document.getElementById("mot").textContent = motAffiche.join(" ");
+    });
   });
 };
 

@@ -147,3 +147,10 @@ body {
   margin-right: 10px;
   cursor: pointer;
 }
+
+.touche.correct {
+  background-color: green;
+}
+.touche.faux {
+  background-color: red;
+}
