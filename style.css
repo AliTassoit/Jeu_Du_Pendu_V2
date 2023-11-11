@@ -118,12 +118,13 @@ body {
   height: 45%;
 }
 
-.clavier {
+#clavier {
   display: flex;
   justify-content: center;
+  visibility: hidden;
 }
 
-#clavier {
+.clavier {
   display: flex;
   flex-direction: column;
 }

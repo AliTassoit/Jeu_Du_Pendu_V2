@@ -46,6 +46,9 @@ function afficherErreur() {
 let afficherDevineRep = () => {
   document.getElementById("devineReponse").style.visibility = "visible";
 };
+let afficherClavier = () => {
+  document.getElementById("clavier").style.visibility = "visible";
+};
 
 let afficherMot = () => {
   recupererMotsUniquement((motsUniquement) => {
@@ -60,10 +63,12 @@ let afficherMot = () => {
     console.log(motMystere);
     let motAffiche = Array(motMystere.length).fill("_");
     document.getElementById("mot").textContent = motAffiche.join(" ");
+    let touchesDejaPresse = [];
     document.addEventListener("keydown", (event) => {
       let touchePresse = event.key.toUpperCase();
       let toucheCorrespondante = document.getElementById(touchePresse);
       let lettrePresente = motMystere.includes(touchePresse);
+      console.log(touchesDejaPresse);
       if (lettrePresente) {
         for (let i = 0; i < motMystere.length; i++) {
           if (motMystere[i] === touchePresse) {
@@ -72,9 +77,14 @@ let afficherMot = () => {
         }
         toucheCorrespondante.classList.add("correct");
       } else {
-        erreur++;
-        afficherErreur();
-        toucheCorrespondante.classList.add("faux");
+        if (touchesDejaPresse.includes(touchePresse)) {
+          console.log("deja present");
+        } else {
+          erreur++;
+          afficherErreur();
+          toucheCorrespondante.classList.add("faux");
+          touchesDejaPresse.push(touchePresse);
+        }
       }
       document.getElementById("mot").textContent = motAffiche.join(" ");
     });
@@ -86,5 +96,6 @@ function afficherPageJeu() {
   afficherErreur();
   document.getElementById("header").style.visibility = "visible";
   afficherMot();
+  afficherClavier();
   afficherDevineRep();
 }
