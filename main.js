@@ -164,6 +164,7 @@ let afficherMot = () => {
 
 let reinitialiserJeu = () => {
   erreur = 0;
+  touchesDejaPresse = [];
   afficherNom();
   afficherErreur();
   document.getElementById("header").style.visibility = "visible";

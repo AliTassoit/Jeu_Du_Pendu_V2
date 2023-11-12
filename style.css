@@ -47,6 +47,7 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 0;
+  overflow: auto;
 }
 
 #header {
@@ -98,6 +99,10 @@ body {
   visibility: hidden;
   margin-bottom: 20px;
 }
+#imagePendu {
+  width: 250px;
+  height: 250px;
+}
 
 #clavier {
   display: flex;
@@ -136,26 +141,6 @@ body {
 }
 .touche.faux {
   background-color: red;
-}
-
-#finJeu {
-  display: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#victoire {
-  display: none;
-  font-size: 5em;
-  font-weight: 900;
-  height: 500px;
-  width: 100%;
-  background-color: rgb(84, 167, 0);
-  opacity: 0.6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 #recommencer {
