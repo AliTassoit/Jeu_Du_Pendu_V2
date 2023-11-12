@@ -40,6 +40,32 @@
           style="color: #000000"
         ></i>
       </button>
+      <div id="regleModal" class="modal">
+        <div class="modalRegle">
+          <span class="close" onclick="fermerModal()">&times;</span>
+          <p>Objectif : Essayez de trouver le mot secret ! <br>
+            Règles : <br>
+            - Tapez les lettres sur votre clavier <br>
+            - Ne depassez pas 9 erreurs
+            <br>
+            - Surtout amusez-vous bien ! <br>
+          </p>
+            
+        </div>
+      </div>
+      <div id="gagneModal" class="modal">
+        <div class="modalGagne">
+          <span class="close" onclick="fermerModal()">&times;</span>
+          <p>Vous avez gagné !</p>
+        </div>
+      </div>
+      <div id="perduModal" class="modal">
+        <div class="modalPerdu">
+          <span class="close" onclick="fermerModal()">&times;</span>
+         <p>Vous avez perdu, le bonhomme est pendu...</p>
+        </div>
+      </div>
+      
     </section>
     <section id="jeu">
       <section id="header">

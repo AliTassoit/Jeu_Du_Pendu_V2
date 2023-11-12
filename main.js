@@ -13,6 +13,26 @@ function scrollToBottom() {
   });
 }
 
+function afficherModalRegle() {
+  document.body.classList.add("modal-open");
+  document.getElementById("regleModal").style.display = "block";
+}
+function afficherModalGagne() {
+  document.body.classList.add("modal-open");
+  document.getElementById("gagneModal").style.display = "block";
+}
+function afficherModalPerdu() {
+  document.body.classList.add("modal-open");
+  document.getElementById("perduModal").style.display = "block";
+}
+
+function fermerModal() {
+  document.body.classList.remove("modal-open");
+  document.getElementById("regleModal").style.display = "none";
+  document.getElementById("gagneModal").style.display = "none";
+  document.getElementById("perduModal").style.display = "none";
+}
+
 function recupererMotsUniquement() {
   return new Promise((resolve, reject) => {
     let apiUrl = "https://trouve-mot.fr/api/random/10";
@@ -114,7 +134,7 @@ function gestionToucheClavier(event) {
       if (erreur === 9) {
         afficherErreur();
         setTimeout(() => {
-          alert("Vous avez perdu, l'homme est pendu");
+          afficherModalPerdu();
         }, 500);
         document.removeEventListener("keydown", gestionToucheClavier);
       }
@@ -124,7 +144,7 @@ function gestionToucheClavier(event) {
   document.getElementById("mot").textContent = motAffiche.join(" ");
   if (!motAffiche.includes("_")) {
     setTimeout(() => {
-      alert("Vous avez gagné !");
+      afficherModalGagne();
     }, 500);
   }
 }
@@ -180,6 +200,7 @@ let afficherPageJeu = () => {
   afficherNom();
   afficherErreur();
   document.getElementById("header").style.visibility = "visible";
+  afficherModalRegle();
   afficherMot();
   afficherClavier();
   document.getElementById("recommencer").style.display = "block";
