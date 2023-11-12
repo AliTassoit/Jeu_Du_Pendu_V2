@@ -78,8 +78,45 @@ function gestionToucheClavier(event) {
       afficherErreur();
       toucheCorrespondante.classList.add("faux");
       touchesDejaPresse.push(touchePresse);
-      if (erreur == 8) {
-        alert("Vous avez perdu, l'homme est pendu");
+      const imagePendu = document.getElementById("imagePendu");
+      switch (erreur) {
+        case 1:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 2:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 3:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 4:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 5:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 6:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 7:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 8:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+        case 9:
+          imagePendu.src = `images/corps_pendu/erreur_${erreur}.png`;
+          break;
+
+        default:
+          break;
+      }
+      if (erreur === 9) {
+        afficherErreur();
+        setTimeout(() => {
+          alert("Vous avez perdu, l'homme est pendu");
+        }, 500);
+        document.removeEventListener("keydown", gestionToucheClavier);
       }
     }
   }
@@ -133,6 +170,9 @@ let reinitialiserJeu = () => {
   afficherMot();
   reinitialiserClavier();
   afficherClavier();
+  document.getElementById(
+    "imagePendu"
+  ).src = `images/corps_pendu/premiere_image.png`;
 };
 
 let afficherPageJeu = () => {
@@ -142,4 +182,5 @@ let afficherPageJeu = () => {
   afficherMot();
   afficherClavier();
   document.getElementById("recommencer").style.display = "block";
+  document.getElementById("imagePendu").style.visibility = "visible";
 };
