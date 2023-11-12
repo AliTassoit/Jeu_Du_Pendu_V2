@@ -45,6 +45,8 @@ body {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  margin: 0;
 }
 
 #header {
@@ -86,6 +88,7 @@ body {
   width: 100%;
   justify-content: center;
   font-size: 5em;
+  margin-left: 10px;
 }
 
 #pendu {
@@ -93,35 +96,14 @@ body {
   width: 100%;
   justify-content: center;
   visibility: hidden;
-}
-
-#devineReponse {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  visibility: hidden;
-}
-
-#motDevine {
-  font-size: 1.7em;
-  border-radius: 5px;
-  margin: 30px;
-  font-family: "Shadows Into Light", cursive;
-  border: solid 1px black;
-}
-
-#verifier {
-  font-size: 1.7em;
-  font-family: "Shadows Into Light", cursive;
-  border-radius: 5px;
-  border: solid 1px black;
-  height: 45%;
+  margin-bottom: 20px;
 }
 
 #clavier {
   display: flex;
   justify-content: center;
   visibility: hidden;
+  margin-top: 50px;
 }
 
 .clavier {
@@ -154,4 +136,36 @@ body {
 }
 .touche.faux {
   background-color: red;
+}
+
+#finJeu {
+  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#victoire {
+  display: none;
+  font-size: 5em;
+  font-weight: 900;
+  height: 500px;
+  width: 100%;
+  background-color: rgb(84, 167, 0);
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#recommencer {
+  font-family: "Shadows Into Light", cursive;
+  font-size: 1.2em;
+  padding: 20px;
+  width: fit-content;
+  border-radius: 5px;
+  border: solid 1px black;
+  margin: auto;
+  display: none;
+  cursor: pointer;
 }
