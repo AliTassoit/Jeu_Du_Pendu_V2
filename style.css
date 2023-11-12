@@ -6,6 +6,7 @@ body {
   background-image: url("images/background.png");
   background-size: cover;
   font-family: "Shadows Into Light", cursive;
+  overflow-x: hidden;
 }
 
 .pageAcceuil {
@@ -15,14 +16,16 @@ body {
   justify-content: center;
   height: 100vh;
   margin-bottom: 150px;
+  margin-top: 0;
 }
 .pageAcceuil img {
-  margin-top: 50px;
+  height: 35%;
 }
 
 .pageAcceuil h1 {
   font-size: 4em;
   opacity: 0.85;
+  margin: 20px;
 }
 .pageAcceuil h4 {
   font-size: 1.2em;
@@ -35,7 +38,7 @@ body {
 
 .pageAcceuil .boutonDemarrage {
   background-color: transparent;
-  font-size: 5em;
+  font-size: 4em;
   border: none;
   cursor: pointer;
   opacity: 0.85;
@@ -47,7 +50,6 @@ body {
   flex-direction: column;
   width: 100%;
   margin: 0;
-  overflow: auto;
 }
 
 #header {
@@ -61,7 +63,6 @@ body {
 #nom {
   font-size: 1.7em;
   border-radius: 5px;
-  margin: 30px;
   font-family: "Shadows Into Light", cursive;
   border: solid 1px black;
 }
@@ -79,6 +80,7 @@ body {
 }
 
 .titreJeu {
+  text-align: center;
   font-style: italic;
   font-size: 2em;
   font-weight: 900;
@@ -88,7 +90,7 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  font-size: 5em;
+  font-size: 3.5em;
   margin-left: 10px;
 }
 
@@ -100,8 +102,8 @@ body {
   margin-bottom: 20px;
 }
 #imagePendu {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
 }
 
 #clavier {
@@ -190,6 +192,7 @@ body {
   left: 50%;
   transform: translate(0%, 50%);
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
 }
 .modalGagne p {
   font-size: 6em;
@@ -204,8 +207,9 @@ body {
   height: auto;
   top: 50%;
   left: 50%;
-  transform: translate(0%, 25%);
+  transform: translate(0%, 15%);
   box-sizing: border-box;
+  backdrop-filter: blur(10px);
 }
 .modalPerdu p {
   font-size: 6em;
@@ -238,4 +242,41 @@ body.modal-open::before {
   background: inherit;
   filter: blur(20px);
   z-index: -1;
+}
+
+@media screen and (max-width: 680px) {
+  #affichageNom {
+    font-size: 1.3em;
+  }
+  #compteurErreur {
+    font-size: 1.3em;
+  }
+  #titreJeu {
+    font-size: 1.7em;
+  }
+  .touche {
+    width: 30px;
+    height: 30px;
+  }
+  #recommencer {
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 450px) {
+  #affichageNom {
+    font-size: 1.1em;
+  }
+  #compteurErreur {
+    font-size: 1.1em;
+  }
+  #titreJeu {
+    font-size: 1.5em;
+  }
+  .touche {
+    width: 25px;
+    height: 25px;
+  }
+  #recommencer {
+    padding: 12px;
+  }
 }
